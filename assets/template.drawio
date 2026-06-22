@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Proceso" id="proc_template">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== POOL / LANES (handoffs) ===== -->
+        <mxCell id="pool" value="Proceso" style="swimlane;html=1;horizontal=0;startSize=23;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="940" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_a" value="Rol A" style="swimlane;html=1;horizontal=0;startSize=23;fillColor=none;" vertex="1" parent="pool">
+          <mxGeometry x="23" y="0" width="917" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_b" value="Rol B" style="swimlane;html=1;horizontal=0;startSize=23;fillColor=none;" vertex="1" parent="pool">
+          <mxGeometry x="23" y="160" width="917" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ===== NODOS (reemplazar) ===== -->
+        <mxCell id="start" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_a">
+          <mxGeometry x="40" y="55" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="Hacer tarea" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_a">
+          <mxGeometry x="160" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" value="¿Condición?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_a">
+          <mxGeometry x="360" y="55" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="Fin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;" vertex="1" parent="lane_b">
+          <mxGeometry x="360" y="50" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== FLUJOS ===== -->
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="lane_a" source="start" target="t1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="lane_a" source="t1" target="g1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="Sí" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="g1" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== LEYENDA ===== -->
+        <mxCell id="leg" value="Leyenda" style="rounded=1;dashed=1;html=1;fillColor=none;strokeColor=#999999;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_start" value="Inicio/Fin (evento)" style="ellipse;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="leg"><mxGeometry x="10" y="30" width="40" height="30" as="geometry" /></mxCell>
+        <mxCell id="leg_task" value="Tarea (verbo)" style="rounded=1;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="leg"><mxGeometry x="160" y="30" width="120" height="30" as="geometry" /></mxCell>
+        <mxCell id="leg_gw" value="Decisión" style="rhombus;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="leg"><mxGeometry x="10" y="80" width="50" height="35" as="geometry" /></mxCell>
+        <mxCell id="leg_sub" value="Sub-proceso" style="rounded=1;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="leg"><mxGeometry x="160" y="82" width="120" height="30" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
